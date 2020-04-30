@@ -1,0 +1,220 @@
+{% extends "dasar.html" %}
+{% block satu %}
+<div class="main" style="margin-left: 20px;">
+<h4>TABEL ALTERNATIF</h4>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">KODE ALTERNATIF</th>
+      <th scope="col">NAMA ALTERNATIF</th>
+      <th scope="col">C1</th>
+      <th scope="col">C2</th>
+      <th scope="col">C3</th>
+      <th scope="col">C4</th>
+      <th scope="col">C5</th>
+      <th scope="col">ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for a in table %}
+    <tr>
+      <td>{{a.kodealternatif}}</td>
+      <td>{{a.namaalternatif}}</td>
+      <td>{{a.c1}}</td>
+      <td>{{a.c2}}</td>
+      <td>{{a.c3}}</td>
+      <td>{{a.c4}}</td>
+      <td>{{a.c5}}</td>
+      <td><a href="{% url "perhitungan:hapus" a.kodealternatif %}" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Hapus</a>
+      <a href="{% url "perhitungan:edit" a.kodealternatif %}" class="btn btn-warning btn-sm active" role="button" aria-pressed="true">Edit</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<div class="main" style="margin-left: 20px;">
+<h4>TABLE NORMALISASI</h4>
+</div>
+<div class="d-flex justify-content-around">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">C1 NORMALISASI</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in normc1 %}
+      <tr>
+        <td>{{a}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">C2 NORMALISASI</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in normc2 %}
+      <tr>
+        <td>{{a}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">C3 NORMALISASI</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in normc3 %}
+      <tr>
+        <td>{{a}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">C4 NORMALISASI</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in normc4 %}
+      <tr>
+        <td>{{a}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">C5 NORMALISASI</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in normc5 %}
+      <tr>
+        <td>{{a}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="main" style="margin-left: 20px;">
+<h4>NORMALISASI X BOBOT</h4>
+</div>
+<div class="d-flex justify-content-around">
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">C1 X 25%</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in botc1 %}
+      <tr>
+        <td>{{a}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">C2 X 15%</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in botc2 %}
+      <tr>
+        <td>{{a}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">C3 X 30%</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in botc3 %}
+      <tr>
+        <td>{{a}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">C4 X 25%</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in botc4 %}
+      <tr>
+        <td>{{a}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">C5 X 5%</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in botc5 %}
+      <tr>
+        <td>{{a}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="main" style="margin-left: 20px;">
+  <h4>HASIL AKHIR</h4>
+</div>
+<div class="d-flex justify-content-around">
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">KODE ALTERNATIF</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for a in hasil %}
+    <tr>
+      <td>{{a}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">HASIL AKHIR</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in hasil2 %}
+      <tr>
+        <td>{{a}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock satu %}

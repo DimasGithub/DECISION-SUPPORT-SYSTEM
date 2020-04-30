@@ -1,0 +1,55 @@
+{% extends "dasar.html" %}
+{% block satu %}
+<div class="container">
+<form method="POST">
+{% csrf_token %}
+    <table>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+            <label>{{table.kodealternatif.label}}</label>
+            {{table.kodealternatif}}
+            </div>
+        </div>
+        <div class ="form-row">
+            <div class = "form-group col-md-6">
+            <label>{{table.namaalternatif.label}}</label>
+            {{table.namaalternatif}}
+            </div>
+        </div>
+        <div class = "form-row">
+            <div class="form-group col-md-4">
+            <label>{{table.c1.label}}</label>
+            {{table.c1}}
+            </div>
+        </div>
+        <div class = "form-row">
+            <div class="form-group col-md-4">
+            <label>{{table.c2.label}}</label>
+            {{table.c2}}
+            </div>
+        </div>
+        <div class = "form-row">
+            <div class="form-group col-md-4">
+            <label>{{table.c3.label}}</label>
+            {{table.c3}}
+            </div>
+        </div>
+        <div class = "form-row">
+            <div class="form-group col-md-4">
+            <label>{{table.c4.label}}</label>
+            {{table.c4}}
+            </div>
+        </div>
+        <div class = "form-row">
+            <div class="form-group col-md-4">
+            <label>{{table.c5.label}}</label>
+            {{table.c5}}
+            </div>
+        </div>
+    </table>
+<button type="submit" class="btn btn-primary">{{tombol}}</button>
+</form>
+
+</div>
+
+{% endblock satu %}

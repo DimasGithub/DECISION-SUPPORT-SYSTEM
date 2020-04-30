@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "snippets/styles.html" %}
+    {% block gaya %}
+    
+    {% endblock gaya%}
+    <title>{{title}}</title>
+</head>
+<body>
+{% include "snippets/nav.html" %}
+
+{% block satu %}
+{% endblock satu %}
+
+{% include "snippets/script.html" %}
+</body>
+</html>
